@@ -1,7 +1,6 @@
 from PySide6.QtWidgets import QMainWindow, QTabWidget, QWidget, QVBoxLayout, QPushButton, QTextEdit, QLineEdit, QLabel
 from app.tasks import circle_areas_generator, email_generator, filter_string
 
-
 class CircleTab(QWidget):
     def __init__(self):
         super().__init__()
@@ -67,7 +66,7 @@ class FilterTab(QWidget):
             result = filter_string(self.input.text())
             self.output.append(f"Результат: {result}")
         except Exception as e:
-            self.output.append(f"Ошибка: {e}")
+            self.output.append(f"Проверьте ввод: должны быть целые числа. Подробнее: {e}")
 
 
 class MainWindow(QMainWindow):

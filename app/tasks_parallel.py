@@ -51,21 +51,21 @@ def main():
     list(circle_areas_generator())
     exec_time_base = time.perf_counter() - start
     exec_time_parallel = float(parallel_circle_areas())
-    print(f"Площадь круга - обычный: {exec_time_base:.6f}, параллельный: {exec_time_parallel:.6f}, быстрее в {exec_time_base/exec_time_parallel:.6f}")
+    print(f"1. Площадь - обычный: {exec_time_base:.6f}, параллельный: {exec_time_parallel:.6f}, быстрее в {exec_time_base/exec_time_parallel:.6f}")
 
     gen = email_generator()
     start = time.perf_counter()
     [next(gen) for _ in range(1000)]
     exec_time_base = time.perf_counter() - start
     exec_time_parallel = float(parallel_email_generator(1000))
-    print(f"Email - обычный: {exec_time_base:.6f}, параллельный: {exec_time_parallel:.6f}, быстрее в {exec_time_base / exec_time_parallel:.6f}")
+    print(f"2. Email - обычный: {exec_time_base:.6f}, параллельный: {exec_time_parallel:.6f}, быстрее в {exec_time_base / exec_time_parallel:.6f}")
 
     data = ' '.join(str(random.randint(-500, 500)) for _ in range(100000))
     start = time.perf_counter()
     filter_string(data)
     exec_time_base = time.perf_counter() - start
     exec_time_parallel = float(parallel_filter_string(data))
-    print(f"Email - обычный: {exec_time_base:.6f}, параллельный: {exec_time_parallel:.6f}, быстрее в {exec_time_base / exec_time_parallel:.6f}")
+    print(f"3. Фильтр - обычный: {exec_time_base:.6f}, параллельный: {exec_time_parallel:.6f}, быстрее в {exec_time_base / exec_time_parallel:.6f}")
 
 
 if __name__ == "__main__":

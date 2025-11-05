@@ -36,7 +36,7 @@ class TestEmailGenerator:
         assert len(local_part) == 8
 
 
-class TestFilterTwoDigitNumbers:
+class TestFilter:
     def test_normal_case(self):
         """Обычный тест"""
         result = filter_string("8 15 345 42 -5 100 67 9 88")
