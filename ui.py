@@ -6,17 +6,13 @@ class CircleTab(QWidget):
     def __init__(self):
         super().__init__()
         self.gen = circle_areas_generator()
-
         layout = QVBoxLayout()
-
         btn = QPushButton("Следующие 5 значений")
         btn.clicked.connect(self.generate)
         layout.addWidget(btn)
-
         self.output = QTextEdit()
         self.output.setReadOnly(True)
         layout.addWidget(self.output)
-
         self.setLayout(layout)
 
     def generate(self):
@@ -34,17 +30,13 @@ class EmailTab(QWidget):
     def __init__(self):
         super().__init__()
         self.gen = email_generator()
-
         layout = QVBoxLayout()
-
         btn = QPushButton("Сгенерировать 7 email")
         btn.clicked.connect(self.generate)
         layout.addWidget(btn)
-
         self.output = QTextEdit()
         self.output.setReadOnly(True)
         layout.addWidget(self.output)
-
         self.setLayout(layout)
 
     def generate(self):
@@ -58,22 +50,16 @@ class EmailTab(QWidget):
 class FilterTab(QWidget):
     def __init__(self):
         super().__init__()
-
         layout = QVBoxLayout()
-
         layout.addWidget(QLabel("Введите числа через пробел:"))
-
         self.input = QLineEdit()
         layout.addWidget(self.input)
-
         btn = QPushButton("Отфильтровать")
         btn.clicked.connect(self.filter)
         layout.addWidget(btn)
-
         self.output = QTextEdit()
         self.output.setReadOnly(True)
         layout.addWidget(self.output)
-
         self.setLayout(layout)
 
     def filter(self):
@@ -89,10 +75,8 @@ class MainWindow(QMainWindow):
         super().__init__()
         self.setWindowTitle("Генераторы и фильтры")
         self.setGeometry(100, 100, 600, 400)
-
         tabs = QTabWidget()
         tabs.addTab(CircleTab(), "Площади кругов")
         tabs.addTab(EmailTab(), "Генератор email")
         tabs.addTab(FilterTab(), "Фильтр чисел")
-
         self.setCentralWidget(tabs)
