@@ -18,4 +18,4 @@ def email_generator():
 #Task 3
 def filter_string(numbers_str):
     numbers = list(map(int, numbers_str.split()))
-    return list(filter(lambda x: 10 <= x <= 99, numbers))
+    return list(filter(lambda x: 10 <= abs(x) <= 99, numbers))
